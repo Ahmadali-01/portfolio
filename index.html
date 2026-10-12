@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#000000" />
+<title>Ahmad Ali — Designer & Developer</title>
+<meta name="description" content="Ahmad Ali — designer & developer building refined, data-driven digital experiences." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000000'/%3E%3Cpath d='M32 12 L50 50 L42 50 L32 30 L22 50 L14 50 Z' fill='%2311eea9'/%3E%3Cpath d='M32 36 L36 46 L28 46 Z' fill='%2311eea9' opacity='.55'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="loader" id="loader">
+  <div class="loader-top">
+    <span class="mono">Ahmad Ali</span>
+    <span class="mono">Portfolio / 2026</span>
+  </div>
+  <div class="loader-center">
+    <span class="loader-word">AHMAD<span class="accent">.</span></span>
+  </div>
+  <div class="loader-bottom">
+    <span class="mono">Loading</span>
+    <span class="mono"><span id="loaderCount">00</span>%</span>
+  </div>
+  <div class="loader-bar"><span id="loaderFill"></span></div>
+</div>
+
+<!-- ============ CURSOR ============ -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor-dot"></span>
+  <span class="cursor-ring"></span>
+  <span class="cursor-label" id="cursorLabel"></span>
+</div>
+
+<!-- ============ PROJECT PREVIEW ============ -->
+<div class="preview" id="preview" aria-hidden="true">
+  <div class="preview-item" data-idx="0"><div class="preview-mock pv-1"><span></span><span></span><span></span></div></div>
+  <div class="preview-item" data-idx="1"><div class="preview-mock pv-2"><span></span><span></span><span></span><span></span></div></div>
+  <div class="preview-item" data-idx="2"><div class="preview-mock pv-3"><div class="pv-circle"></div></div></div>
+  <div class="preview-item" data-idx="3"><div class="preview-mock pv-4"><span></span><span></span></div></div>
+  <div class="preview-item" data-idx="4"><div class="preview-mock pv-5"><span></span><span></span><span></span><span></span></div></div>
+  <div class="preview-item" data-idx="5"><div class="preview-mock pv-6"><div class="pv-circle pv-circle--sm"></div></div></div>
+</div>
+
+<a class="skip" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <div class="hdr-inner wrap">
+    <a class="brand" href="#top" aria-label="Ahmad Ali — home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="22" height="22" fill="none">
+          <path d="M20 6 L33 32 L27 32 L20 17 L13 32 L7 32 Z" fill="currentColor"/>
+          <path d="M20 22 L24 30 L16 30 Z" fill="currentColor" opacity=".55"/>
+        </svg>
+      </span>
+      <span class="brand-word">Ahmad Ali</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#capabilities" class="nav-link">Capabilities</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="hdr-right">
+      <span class="clock mono" id="clock" aria-label="Local time">--:--:--</span>
+      <span class="avail mono"><span class="live-dot"></span> Available</span>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span class="menu-btn-bars" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="progress-line" aria-hidden="true"></div>
+  </div>
+</header>
+
+<!-- ============ FULLSCREEN MENU ============ -->
+<div class="menu" id="menu" hidden>
+  <div class="menu-inner wrap">
+    <nav class="menu-nav" aria-label="Menu">
+      <a href="#about" class="menu-link"><span class="mono">01</span><span class="menu-word">About</span></a>
+      <a href="#work" class="menu-link"><span class="mono">02</span><span class="menu-word">Work</span></a>
+      <a href="#capabilities" class="menu-link"><span class="mono">03</span><span class="menu-word">Capabilities</span></a>
+      <a href="#numbers" class="menu-link"><span class="mono">04</span><span class="menu-word">Numbers</span></a>
+      <a href="#voices" class="menu-link"><span class="mono">05</span><span class="menu-word">Voices</span></a>
+      <a href="#contact" class="menu-link"><span class="mono">06</span><span class="menu-word">Contact</span></a>
+    </nav>
+    <div class="menu-foot">
+      <div>
+        <span class="mono">Email</span>
+        <a href="mailto:ahmadali.consult@gmailcom">ahmadali.consult@gmail.com</a>
+      </div>
+      <div>
+        <span class="mono">Socials</span>
+        <div class="menu-socials">
+          <a href="https://github.com/ahmadali-01" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-glow" aria-hidden="true"></div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-meta">
+      <span class="mono reveal-line"><span>Ahmad Ali — Portfolio 2026</span></span>
+    </div>
+
+    <h1 class="hero-title" aria-label="I design and build digital experiences that move the market">
+      <span class="line"><span class="reveal-line"><span>I design &amp; build</span></span></span>
+      <span class="line"><span class="reveal-line"><span><em>digital experiences</em></span></span></span>
+      <span class="line"><span class="reveal-line"><span>that move <span class="outline">the market.</span></span></span></span>
+    </h1>
+
+    <div class="hero-foot">
+      <p class="hero-lede reveal-block">
+        A designer &amp; developer crafting refined, data-driven interfaces for
+        brands that care about the details as much as I do.
+      </p>
+      <div class="hero-ctas reveal-block">
+        <a class="btn btn-primary magnetic" href="#work">
+          <span>View selected work</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn btn-ghost magnetic" href="#contact">
+          <span>Start a project</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="mono">Scroll to explore</span>
+      <span class="hero-scroll-line"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Web Design</span><i>✦</i>
+    <span>Frontend Development</span><i>✦</i>
+    <span>Interaction Design</span><i>✦</i>
+    <span>Design Systems</span><i>✦</i>
+    <span>React</span><i>✦</i>
+    <span>Webflow</span><i>✦</i>
+    <span>Web Design</span><i>✦</i>
+    <span>Frontend Development</span><i>✦</i>
+    <span>Interaction Design</span><i>✦</i>
+    <span>Design Systems</span><i>✦</i>
+    <span>React</span><i>✦</i>
+    <span>Webflow</span><i>✦</i>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono sec-idx reveal-line"><span>01 / About</span></span>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-left">
+        <div class="portrait reveal-block">
+          <div class="portrait-inner">
+            <span class="portrait-letter">A</span>
+            <div class="portrait-grid" aria-hidden="true"></div>
+          </div>
+          <div class="portrait-caption mono">
+            <span>Ahmad Ali</span><span>·</span><span>2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <h2 class="about-lead">
+          <span class="line"><span class="reveal-line"><span>I care about the</span></span></span>
+          <span class="line"><span class="reveal-line"><span><em>little things</em> others miss —</span></span></span>
+          <span class="line"><span class="reveal-line"><span>the weight of a font, the</span></span></span>
+          <span class="line"><span class="reveal-line"><span>space between two lines.</span></span></span>
+        </h2>
+
+        <p class="about-body reveal-block">
+          Over the past three years I've built marketing sites, dashboards,
+          e-commerce storefronts and side projects. I work at the intersection
+          of design and code — a place where craft matters more than trends.
+        </p>
+
+        <ul class="about-facts reveal-block">
+          <li><span class="mono">Focus</span><span class="fact-val">Frontend &amp; UI design</span></li>
+          <li><span class="mono">Stack</span><span class="fact-val">HTML · CSS · JS · React · Figma</span></li>
+          <li><span class="mono">Open to</span><span class="fact-val">Internships · Freelance · Collabs</span></li>
+          <li><span class="mono">Location</span><span class="fact-val">Pakistan · Remote</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="sec sec-alt" id="work">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <span class="mono sec-idx reveal-line"><span>02 / Selected Work</span></span>
+      <h2 class="sec-title">
+        <span class="line"><span class="reveal-line"><span>A few things</span></span></span>
+        <span class="line"><span class="reveal-line"><span><em>I've built</em>.</span></span></span>
+      </h2>
+    </div>
+
+    <ul class="work-list" id="workList">
+      <li class="work-row" data-idx="0">
+        <span class="work-num mono">01</span>
+        <span class="work-title">Nimbus — SaaS Dashboard</span>
+        <span class="work-tags mono">React · TypeScript · D3</span>
+        <span class="work-year mono">2026</span>
+        <span class="work-arrow" aria-hidden="true">→</span>
+      </li>
+      <li class="work-row" data-idx="1">
+        <span class="work-num mono">02</span>
+        <span class="work-title">Cartly — Storefront</span>
+        <span class="work-tags mono">Next.js · Stripe · Sanity</span>
+        <span class="work-year mono">2026</span>
+        <span class="work-arrow" aria-hidden="true">→</span>
+      </li>
+      <li class="work-row" data-idx="2">
+        <span class="work-num mono">03</span>
+        <span class="work-title">Pulse — Fitness Tracker</span>
+        <span class="work-tags mono">Vue · Chart.js · IndexedDB</span>
+        <span class="work-year mono">2025</span>
+        <span class="work-arrow" aria-hidden="true">→</span>
+      </li>
+      <li class="work-row" data-idx="3">
+        <span class="work-num mono">04</span>
+        <span class="work-title">Kindred — Recipe App</span>
+        <span class="work-tags mono">Firebase · Vue · Algolia</span>
+        <span class="work-year mono">2025</span>
+        <span class="work-arrow" aria-hidden="true">→</span>
+      </li>
+      <li class="work-row" data-idx="4">
+        <span class="work-num mono">05</span>
+        <span class="work-title">Forge — Marketing Site</span>
+        <span class="work-tags mono">HTML · CSS · JS</span>
+        <span class="work-year mono">2024</span>
+        <span class="work-arrow" aria-hidden="true">→</span>
+      </li>
+      <li class="work-row" data-idx="5">
+        <span class="work-num mono">06</span>
+        <span class="work-title">Atlas — Travel Journal</span>
+        <span class="work-tags mono">Svelte · Supabase · Mapbox</span>
+        <span class="work-year mono">2024</span>
+        <span class="work-arrow" aria-hidden="true">→</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CAPABILITIES ============ -->
+<section class="sec" id="capabilities">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <span class="mono sec-idx reveal-line"><span>03 / Capabilities</span></span>
+      <h2 class="sec-title">
+        <span class="line"><span class="reveal-line"><span>From <em>design</em></span></span></span>
+        <span class="line"><span class="reveal-line"><span>to deployment.</span></span></span>
+      </h2>
+    </div>
+
+    <div class="caps" id="caps">
+      <details class="cap" open>
+        <summary>
+          <span class="cap-num mono">01</span>
+          <span class="cap-title">Custom Design</span>
+          <span class="cap-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="cap-body">
+          <p>Personalized designs based on your unique business. No templates — I take the time to understand what makes you stand out, then design around it.</p>
+          <ul class="cap-list mono">
+            <li>Brand identity</li>
+            <li>UI &amp; UX</li>
+            <li>Design systems</li>
+            <li>Prototyping</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="cap">
+        <summary>
+          <span class="cap-num mono">02</span>
+          <span class="cap-title">Precise Development</span>
+          <span class="cap-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="cap-body">
+          <p>Every design file becomes a custom-built, true-to-design website. Pixel-perfect, performant, and easy to maintain long after launch.</p>
+          <ul class="cap-list mono">
+            <li>HTML / CSS / JS</li>
+            <li>React &amp; Next.js</li>
+            <li>Headless CMS</li>
+            <li>Performance</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="cap">
+        <summary>
+          <span class="cap-num mono">03</span>
+          <span class="cap-title">SEO Friendly</span>
+          <span class="cap-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="cap-body">
+          <p>A beautiful site nobody finds is useless. I follow modern guidelines in natural referencing so your site actually gets seen.</p>
+          <ul class="cap-list mono">
+            <li>Technical SEO</li>
+            <li>Core Web Vitals</li>
+            <li>Schema markup</li>
+            <li>Analytics</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="cap">
+        <summary>
+          <span class="cap-num mono">04</span>
+          <span class="cap-title">Motion &amp; Interaction</span>
+          <span class="cap-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="cap-body">
+          <p>Interaction design that feels inevitable. Small, purposeful motion that guides the eye and makes interfaces feel alive.</p>
+          <ul class="cap-list mono">
+            <li>Micro-interactions</li>
+            <li>Scroll animations</li>
+            <li>Page transitions</li>
+            <li>Motion principles</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NUMBERS ============ -->
+<section class="sec sec-alt" id="numbers">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono sec-idx reveal-line"><span>04 / Numbers</span></span>
+    </div>
+    <ul class="stats">
+      <li class="stat reveal-block">
+        <span class="stat-num" data-count="32">00</span>
+        <span class="stat-label mono">Projects shipped</span>
+      </li>
+      <li class="stat reveal-block">
+        <span class="stat-num" data-count="18">00</span>
+        <span class="stat-label mono">Happy clients</span>
+      </li>
+      <li class="stat reveal-block">
+        <span class="stat-num" data-count="4">00</span>
+        <span class="stat-label mono">Years designing</span>
+      </li>
+      <li class="stat reveal-block">
+        <span class="stat-num" data-count="99" data-suffix="%">00</span>
+        <span class="stat-label mono">On-time delivery</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ VOICES ============ -->
+<section class="sec" id="voices">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <span class="mono sec-idx reveal-line"><span>05 / Voices</span></span>
+      <h2 class="sec-title">
+        <span class="line"><span class="reveal-line"><span>What people</span></span></span>
+        <span class="line"><span class="reveal-line"><span><em>say</em>.</span></span></span>
+      </h2>
+    </div>
+
+    <div class="voices">
+      <figure class="voice reveal-block">
+        <blockquote>“Ahmad provides great design and has an excellent sense of user experience. He delivers on time and communicates beautifully.”</blockquote>
+        <figcaption>
+          <span class="voice-avatar mono">MN</span>
+          <span><strong>Mara Nikolic</strong><em>Founder · Mara Studio</em></span>
+        </figcaption>
+      </figure>
+
+      <figure class="voice reveal-block">
+        <blockquote>“He will exceed your expectations. Super easy to work with, incredibly thoughtful, and remarkably perceptive.”</blockquote>
+        <figcaption>
+          <span class="voice-avatar mono">DU</span>
+          <span><strong>Danaisa Urgelles</strong><em>Medical Doctor · BHField</em></span>
+        </figcaption>
+      </figure>
+
+      <figure class="voice reveal-block">
+        <blockquote>“The project went smoothly and we're thrilled with the outcome. Clearly a very talented designer.”</blockquote>
+        <figcaption>
+          <span class="voice-avatar mono">KM</span>
+          <span><strong>Kam Malik</strong><em>Managing Director · LeadSense</em></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="sec sec-contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="mono sec-idx reveal-line"><span>06 / Contact</span></span>
+    </div>
+
+    <h2 class="contact-title">
+      <span class="line"><span class="reveal-line"><span>Let's build</span></span></span>
+      <span class="line"><span class="reveal-line"><span>something <em>worth shipping</em>.</span></span></span>
+    </h2>
+
+    <div class="contact-grid">
+      <div class="contact-left">
+        <ul class="contact-list reveal-block">
+          <li><span class="mono">Email</span><a href="mailto:ahmadali.consult@gmail.com">ahmadali.consult@gmail.com</a></li>
+          <li><span class="mono">Location</span><span>Pakistan · Remote-friendly</span></li>
+          <li><span class="mono">Availability</span><span>Open to new projects</span></li>
+        </ul>
+
+        <div class="contact-socials reveal-block">
+          <a href="https://github.com/ahmadali-01" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
+        </div>
+      </div>
+
+      <form class="form reveal-block" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" aria-describedby="name-error" />
+            <p class="field-error mono" id="name-error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" aria-describedby="email-error" />
+            <p class="field-error mono" id="email-error" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="internship">Internship opportunity</option>
+            <option value="freelance">Freelance project</option>
+            <option value="collab">Collaboration</option>
+            <option value="hello">Just saying hi</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell me about your project…" aria-describedby="message-error"></textarea>
+          <p class="field-error mono" id="message-error" aria-live="polite"></p>
+        </div>
+
+        <button class="btn btn-primary btn-full magnetic" type="submit" id="submit-btn">
+          <span class="btn-label">Send message</span>
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </button>
+
+        <p class="form-note mono">Your details stay private. No spam, ever.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <span class="mono reveal-line"><span>Say hello</span></span>
+      <a class="footer-email magnetic" href="mailto:ahmadali.consult@gmail.com">
+  <span>ahmadali.consult@gmail.com</span>
+  <span class="btn-arrow" aria-hidden="true">↗</span>
+</a>
+    </div>
+    <div class="footer-bottom">
+      <span class="mono">© <span id="year"></span> Ahmad Ali — All rights reserved</span>
+      <span class="mono">Designed &amp; built with care</span>
+      <ul class="footer-links mono">
+        <li><a href="#top">Top</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
